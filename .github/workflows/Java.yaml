@@ -6,7 +6,7 @@ on:
     branches: [ "main" ]
 jobs:
   build:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - name: Set up JDK 11
@@ -15,11 +15,15 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: Set up Maven
+      uses: s4u/setup-maven-action@v1
+      with:
+        maven-version: '3.8.8'
     - name: Build with Maven
       run: mvn -B package --file EmployeeSalaryCalculator/pom.xml
 
   update-readme:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3

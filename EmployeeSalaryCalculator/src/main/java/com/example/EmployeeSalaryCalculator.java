@@ -36,6 +36,7 @@ public class EmployeeSalaryCalculator
 		
 		salaryCalculator(hoursWorked,hourlyRate);
 		displayPaySlip();
+		sc.close();
 	}
 
 	static int salaryCalculator(int HW,int HR)

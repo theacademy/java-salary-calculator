@@ -23,7 +23,7 @@ jobs:
       run: mvn -B package --file EmployeeSalaryCalculator/pom.xml
 
   update-readme:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
